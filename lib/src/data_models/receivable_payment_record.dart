@@ -6,8 +6,8 @@ class ReceivablePaymentRecord
   String chargerName;
   DateTime startDate;
   DateTime endDate;
-  double amountOfCharging = 0.0;
-  int unitPrice = 0;
+  int amountOfCharging = 0;
+  double unitPrice = 0.0;
   bool isChargingCompleted;
   bool isPaymentCompleted;
   int chargingFee = 0;
@@ -42,7 +42,7 @@ class ReceivablePaymentRecord
       stationName: jsonData['stationName'] ?? '',
       startDate: startDate,
       endDate: endDate,
-      amountOfCharging: aoc.toDouble(),
+      amountOfCharging: aoc,
       unitPrice: jsonData['unitPrice'],
       isChargingCompleted: jsonData['chargingCompleted'],
       isPaymentCompleted: jsonData['paymentCompleted'],
