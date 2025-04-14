@@ -20,7 +20,7 @@ class ConnectionError extends StatelessWidget
               size: 30,
             ),
             const SizedBox(height: 10,),
-            Text('서비스 연결중 오류가 발생했습니다.',
+            Text('서비스 연결중 오류가 발생 했습니다.',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 15,
