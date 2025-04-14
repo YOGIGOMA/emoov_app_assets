@@ -11,6 +11,7 @@ class ReceivablePaymentRecord
   bool isChargingCompleted;
   bool isPaymentCompleted;
   int chargingFee = 0;
+  String PaymentOrderId;
 
   ReceivablePaymentRecord({
     required this.stationName,
@@ -21,7 +22,8 @@ class ReceivablePaymentRecord
     required this.unitPrice,
     required this.isChargingCompleted,
     required this.isPaymentCompleted,
-    required this.chargingFee
+    required this.chargingFee,
+    required this.PaymentOrderId,
   });
 
   factory ReceivablePaymentRecord.fromJson(Map<String, dynamic> jsonData)
@@ -47,6 +49,7 @@ class ReceivablePaymentRecord
       isChargingCompleted: jsonData['chargingCompleted'],
       isPaymentCompleted: jsonData['paymentCompleted'],
       chargingFee: jsonData['chargingFee'],
+      PaymentOrderId: jsonData['orderId'] ?? '',
     );
   }
 }
