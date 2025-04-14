@@ -28,11 +28,12 @@ class EmoovBadge2 extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      margin: const EdgeInsets.only(left:2.5, right: 2.5),
+      margin: const EdgeInsets.only(right: 2.5),
       padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 1.5),
       decoration: BoxDecoration(
           color: backgroundColor,
-          borderRadius: BorderRadius.circular(15.r)
+          borderRadius: BorderRadius.circular(15.r),
+          border: Border.all(color: borderColor, width: 1),
       ),
       child: Center(
         child: Text(label,
