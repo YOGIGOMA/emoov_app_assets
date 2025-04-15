@@ -12,6 +12,7 @@ export 'src/data_models/charger_station_extra.dart';
 export 'src/data_models/charger_info.dart';
 export 'src/data_models/charging_req_msg.dart';
 export 'src/data_models/charging_confirm_msg.dart';
+export 'src/data_models/charging_status_msg.dart';
 export 'src/data_models/credit_card.dart';
 export 'src/data_models/credit_card_bin_info.dart';
 export 'src/data_models/faq.dart';
