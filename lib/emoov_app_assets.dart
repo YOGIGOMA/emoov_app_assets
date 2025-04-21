@@ -33,3 +33,4 @@ export 'src/widgets/filled_text_button.dart';
 export 'src/widgets/outlined_text_button.dart';
 export 'src/widgets/emoov_flat_button.dart';
 export 'src/widgets/emoov_badge.dart';
+export 'src/widgets/emoov_tag.dart';
