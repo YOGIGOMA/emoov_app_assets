@@ -30,3 +30,4 @@ export 'src/data_models/user_point.dart';
 export 'src/widgets/connection_error.dart';
 export 'src/widgets/emoov_badge2.dart';
 export 'src/widgets/filled_text_button.dart';
+export 'src/widgets/outlined_text_button.dart';
