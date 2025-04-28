@@ -26,6 +26,7 @@ export 'src/data_models/push_alarm.dart';
 export 'src/data_models/setup_options.dart';
 export 'src/data_models/station_search_filter.dart';
 export 'src/data_models/user_point.dart';
+export 'src/data_models/identity_verification_info.dart';
 
 export 'src/widgets/connection_error.dart';
 export 'src/widgets/emoov_badge2.dart';
