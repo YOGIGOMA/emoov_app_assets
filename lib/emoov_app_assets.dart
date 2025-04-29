@@ -1,6 +1,7 @@
 library emoov_app_assets;
 
 export 'src/pages/app_info_page.dart';
+export 'src/pages/templates/bigtitle_base_page.dart';
 
 export 'src/data_models/app_user.dart';
 export 'src/data_models/receivable_payment_record.dart';
