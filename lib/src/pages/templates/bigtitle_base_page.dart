@@ -63,7 +63,7 @@ class BigTitleBasePage extends ConsumerWidget
                     Positioned(
                       bottom: 0, left: 0,
                       child: SvgPicture.asset(
-                        'assets/img/login_bg_01.svg',
+                        'assets/img/bg_deco_01.svg',
                         package: 'emoov_app_assets',
                         width: 374,
                         height: 261,
@@ -72,7 +72,7 @@ class BigTitleBasePage extends ConsumerWidget
                     Positioned(
                       bottom: 0, right: 0,
                       child: SvgPicture.asset(
-                        'assets/img/login_bg_02.svg',
+                        'assets/img/bg_deco_02.svg',
                         package: 'emoov_app_assets',
                         width: 375,
                         height: 210,
@@ -81,7 +81,7 @@ class BigTitleBasePage extends ConsumerWidget
                     Positioned(
                       bottom: 0, right: 0,
                       child: SvgPicture.asset(
-                        'assets/img/login_bg_03.svg',
+                        'assets/img/bg_deco_03.svg',
                         package: 'emoov_app_assets',
                         width: 305,
                         height: 120,
