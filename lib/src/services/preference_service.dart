@@ -117,19 +117,19 @@ class PreferenceService
     prefs.setDouble(PreferenceKeys.prefKeyFilterRadius, value);
   }
 
-  void saveAccessible(bool value) async
+  static void saveAccessible(bool value) async
   {
     final prefs = await SharedPreferences.getInstance();
     prefs.setBool(PreferenceKeys.prefKeyFilterIsOpen, value);
   }
 
-  void saveUseBiometric(bool value) async
+  static void saveUseBiometric(bool value) async
   {
     final prefs = await SharedPreferences.getInstance();
     prefs.setBool(PreferenceKeys.prefKeySetupUseBiometrics, value);
   }
 
-  Future<bool?> getUseBiometricState() async
+  static Future<bool?> getUseBiometricState() async
   {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(PreferenceKeys.prefKeySetupUseBiometrics);
