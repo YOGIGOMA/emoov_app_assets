@@ -22,4 +22,10 @@ class CommonConstants
     '07':'AC3상',
     '89':'H2',
   };
+
+  static const List<String> openSourceLicences = [
+    'Flutter 3.24.3',
+    'flutter_naver_map 1.3.1',
+    'riverpod 2.3.10'
+  ];
 }
