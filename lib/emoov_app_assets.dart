@@ -1,6 +1,7 @@
 library emoov_app_assets;
 
 export 'src/pars/common_constants.dart';
+export 'src/pars/preference_keys.dart';
 
 export 'src/pages/app_info_page.dart';
 export 'src/pages/templates/bigtitle_base_page.dart';
