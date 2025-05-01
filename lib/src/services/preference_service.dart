@@ -6,7 +6,46 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// Preference 서비스 클래스
 class PreferenceService
 {
-  Future<dynamic> hasChargingProcess() async
+  static Future<void> initializeSharedPreference() async
+  {
+    /// preference 저장소 인스턴스를 설정한다.
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    /// Set default filter options for charger searching.
+    if(prefs.getStringList(PreferenceKeys.prefKeyFilterCpo) == null) {
+      prefs.setStringList(PreferenceKeys.prefKeyFilterCpo, []);
+    }
+    if(prefs.getBool(PreferenceKeys.prefKeyFilterIsOpen) == null) {
+      prefs.setBool(PreferenceKeys.prefKeyFilterIsOpen, false);
+    }
+    if(prefs.getStringList(PreferenceKeys.prefKeyFilterConnectorType) == null) {
+      prefs.setStringList(PreferenceKeys.prefKeyFilterConnectorType, []);
+    }
+    if(prefs.getDouble(PreferenceKeys.prefKeyFilterRadius) == null) {
+      prefs.setDouble(PreferenceKeys.prefKeyFilterRadius, 1.0);
+    }
+    if(prefs.getStringList(PreferenceKeys.prefKeyFilterChargingSpeed) == null) {
+      prefs.setStringList(PreferenceKeys.prefKeyFilterChargingSpeed, []);
+    }
+    if(prefs.getStringList(PreferenceKeys.prefKeyFilterFacilityType) == null) {
+      prefs.setStringList(PreferenceKeys.prefKeyFilterFacilityType, []);
+    }
+
+    /// Set default setup
+    if(prefs.getBool(PreferenceKeys.prefKeySetupUseBiometrics) == null) {
+      prefs.setBool(PreferenceKeys.prefKeySetupUseBiometrics, false);
+    }
+
+    /// Set default state
+    if(prefs.getBool(PreferenceKeys.prefKeyStateIsFirstRun) == null) {
+      prefs.setBool(PreferenceKeys.prefKeyStateIsFirstRun, true);
+    }
+    if(prefs.getBool(PreferenceKeys.prefKeyStateCanUseBiometrics) == null) {
+      prefs.setBool(PreferenceKeys.prefKeyStateCanUseBiometrics, false);
+    }
+  }
+
+  static Future<dynamic> hasChargingProcess() async
   {
     final prefs = await SharedPreferences.getInstance();
 
@@ -21,7 +60,7 @@ class PreferenceService
     }
   }
 
-  Future<StationSearchFilter> getFilterOptions() async
+  static Future<StationSearchFilter> getFilterOptions() async
   {
     final prefs = await SharedPreferences.getInstance();
 
@@ -38,7 +77,7 @@ class PreferenceService
     return filter;
   }
 
-  Future<SetupOptions> getSetupOptions() async
+  static Future<SetupOptions> getSetupOptions() async
   {
     final prefs = await SharedPreferences.getInstance();
 
@@ -49,7 +88,7 @@ class PreferenceService
     return options;
   }
 
-  Future<void> saveCpos(List<String> cpos) async
+  static Future<void> saveCpos(List<String> cpos) async
   {
     final prefs = await SharedPreferences.getInstance();
 
@@ -58,21 +97,21 @@ class PreferenceService
     return;
   }
 
-  Future<void>  saveConnectors(List<String> connectors) async
+  static Future<void>  saveConnectors(List<String> connectors) async
   {
     final prefs = await SharedPreferences.getInstance();
 
     prefs.setStringList(PreferenceKeys.prefKeyFilterConnectorType, connectors);
   }
 
-  void saveSpeeds(List<String> speeds) async
+  static void saveSpeeds(List<String> speeds) async
   {
     final prefs = await SharedPreferences.getInstance();
 
     prefs.setStringList(PreferenceKeys.prefKeyFilterChargingSpeed, speeds);
   }
 
-  void saveRadius(double value) async
+  static void saveRadius(double value) async
   {
     final prefs = await SharedPreferences.getInstance();
     prefs.setDouble(PreferenceKeys.prefKeyFilterRadius, value);
