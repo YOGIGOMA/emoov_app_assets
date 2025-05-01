@@ -135,7 +135,7 @@ class PreferenceService
     return prefs.getBool(PreferenceKeys.prefKeySetupUseBiometrics);
   }
 
-  Future<String> printBiometricsStatus() async
+  static Future<String> printBiometricsStatus() async
   {
     final prefs = await SharedPreferences.getInstance();
 
