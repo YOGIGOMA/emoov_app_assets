@@ -8,6 +8,8 @@ export 'src/services/secure_storage_service.dart';
 export 'src/services/emoov_http_client.dart';
 //export 'src/services/auth_request_interceptor.dart';
 
+export 'src/riverpod/app_user_notifier.dart';
+
 export 'src/pages/app_info_page.dart';
 export 'src/pages/templates/bigtitle_base_page.dart';
 
