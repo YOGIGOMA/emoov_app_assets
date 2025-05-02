@@ -6,7 +6,7 @@ export 'src/pars/preference_keys.dart';
 export 'src/services/preference_service.dart';
 export 'src/services/secure_storage_service.dart';
 export 'src/services/emoov_http_client.dart';
-//export 'src/services/auth_request_interceptor.dart';
+export 'src/services/id_verifying_service.dart';
 
 export 'src/riverpod/app_user_notifier.dart';
 
