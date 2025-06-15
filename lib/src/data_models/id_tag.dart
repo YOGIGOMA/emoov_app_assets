@@ -53,7 +53,7 @@ class IdTag {
       isDeleted: jsonData['isDeleted'],
       regDate: splits[0].trim(),
       isMobileCardTagId: jsonData['isOurIssued'],
-      issueMethod: jsonData['issueMethod'],
+      issueMethod: jsonData['issueMethod'] ?? '',
     );
   }
 }
