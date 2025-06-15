@@ -123,6 +123,9 @@ class AuthRequestInterceptor extends Interceptor
     else if(err.response?.statusCode == 451) {
 
     }
+    else if(err.response?.statusCode == 400) {
+      final errData = err.response?.data;
+    }
 
     super.onError(err, handler);
   }
