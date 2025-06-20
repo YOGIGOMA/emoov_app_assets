@@ -67,7 +67,10 @@ class ParkingThruApiService
   /// 파킹스루 API 사용을 위한 토큰을 요청
   /// API 사용전에 가장 먼저 호출을 해야 함
   /// </summary>
-  Future<Map<String, dynamic>> getTokenAsync(String parkingThruDomainName, String idNumber) async
+  Future<Map<String, dynamic>> getTokenAsync(
+      String parkingThruDomainName,
+      String parkingThruServiceId,
+      String idNumber) async
   {
     idNumber = idNumber.replaceAll('-', '');
     if(idNumber.length > 40) {
@@ -76,13 +79,13 @@ class ParkingThruApiService
 
     String para = "{"
           "\"apiToken\":\"MemberShipAuthTokenRequest\","
-          "\"idCenter\":\"36\","
+          "\"idCenter\":\"$parkingThruServiceId\","
           "\"phoneNo\":\"$idNumber\","
           "\"device\":\" \","
           "\"model\":\" \","
           "\"osType\":\"2\","
           "\"appVer\":\"1.0\","
-          "\"loginId\":\"kelon\""
+          "\"loginId\":\"$idNumber\""
         "}";
 
     log('[EMOOV] ParkingThru Api Service: $para');
