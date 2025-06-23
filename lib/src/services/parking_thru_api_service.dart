@@ -15,6 +15,7 @@ class ParkingThruApiService
   /// </summary>
   Future<Map<String, dynamic>> getUniqueIdTagNumberAsync(
       String parkingThruDomainName,
+      String parkingThruIssuerType,
       String token) async
   {
     Map<String, dynamic> result = {
@@ -26,7 +27,7 @@ class ParkingThruApiService
 
     String endPoint2 = '$parkingThruDomainName/service/requestNo.do';
     Map<String, String> body2 = {
-      'issuerType': 'YrfLGMQqlnPvphp2vh0h0Q=='
+      'issuerType': parkingThruIssuerType
     };
     final jsonBody2 = jsonEncode(body2);
 
