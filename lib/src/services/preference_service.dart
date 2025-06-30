@@ -43,6 +43,10 @@ class PreferenceService
     if(prefs.getBool(PreferenceKeys.prefKeyStateCanUseBiometrics) == null) {
       prefs.setBool(PreferenceKeys.prefKeyStateCanUseBiometrics, false);
     }
+    if(prefs.getBool(PreferenceKeys.prefKeyStateRememberLoginInfo) == null) {
+      prefs.setBool(PreferenceKeys.prefKeyStateRememberLoginInfo, false);
+    }
+
   }
 
   static Future<dynamic> hasChargingProcess() async
@@ -133,6 +137,18 @@ class PreferenceService
   {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(PreferenceKeys.prefKeySetupUseBiometrics);
+  }
+
+  static void saveRememberLoginInfoState(bool value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool(PreferenceKeys.prefKeyStateRememberLoginInfo, value);
+  }
+  
+  static Future<bool?> getRememberLoginInfoState() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(PreferenceKeys.prefKeyStateRememberLoginInfo);
   }
 
   static Future<String> printBiometricsStatus() async
