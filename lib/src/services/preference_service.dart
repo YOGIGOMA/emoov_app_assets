@@ -144,11 +144,23 @@ class PreferenceService
     final prefs = await SharedPreferences.getInstance();
     prefs.setBool(PreferenceKeys.prefKeyStateRememberLoginInfo, value);
   }
-  
+
   static Future<bool?> getRememberLoginInfoState() async
   {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(PreferenceKeys.prefKeyStateRememberLoginInfo);
+  }
+
+  static void saveNeverShowNfcHelpState(bool value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool(PreferenceKeys.prefKeyStateNeverShowNfcHelp, value);
+  }
+
+  static Future<bool?> getNeverShowNfcHelpState() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(PreferenceKeys.prefKeyStateNeverShowNfcHelp);
   }
 
   static Future<String> printBiometricsStatus() async

@@ -15,4 +15,5 @@ class PreferenceKeys
   static const String prefKeyStateIsFirstRun = 'state.isFirstRun';
   static const String prefKeyStateCanUseBiometrics = 'state.canUseBiometrics';
   static const String prefKeyStateRememberLoginInfo = 'state.rememberLoginInfo';
+  static const String prefKeyStateNeverShowNfcHelp = 'state.neverShowNfcHelp';
 }

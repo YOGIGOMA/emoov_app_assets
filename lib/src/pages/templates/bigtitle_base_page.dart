@@ -16,6 +16,7 @@ class BigTitleBasePage extends ConsumerWidget
   final String? titleLine3;
   final String? subTitle;
   final Widget body;
+  final VoidCallback onGestureTap;
 
   const BigTitleBasePage({
     required this.scrollController,
@@ -23,6 +24,7 @@ class BigTitleBasePage extends ConsumerWidget
     required this.titleLine1,
     required this.titleLine2,
     required this.body,
+    required this.onGestureTap,
     this.titleLine3,
     this.subTitle,
     super.key
@@ -50,9 +52,7 @@ class BigTitleBasePage extends ConsumerWidget
           ),
         ),
         body: GestureDetector(
-            onTap:() {
-              fs.unfocus();
-            },
+            onTap: onGestureTap,
             child: Container(
                 width: double.infinity,
                 decoration: const BoxDecoration(
