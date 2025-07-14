@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 /// @{category DataModel}
 /// 이무브 충전기 데이터모델
 class EmoovCharger
@@ -55,7 +57,7 @@ class EmoovConnector
     var connector = EmoovConnector(
       connectorId: jsonData['connectorId'] ?? '',
       status: jsonData['status'] ?? '',
-      connectorTypes: jsonData['connectorTypes'],
+      connectorTypes: List<String>.from(jsonDecode(jsonData['connectorTypes'])) ?? [],
     );
 
     return connector;
