@@ -54,10 +54,13 @@ class EmoovConnector
 
   factory EmoovConnector.fromJson(Map<String, dynamic> jsonData)
   {
+    List<dynamic> connectorTypes = jsonData['connectorTypes'];
+    List<String> connectorTypesStr = List<String>.from(connectorTypes);
+
     var connector = EmoovConnector(
       connectorId: jsonData['connectorId'] ?? '',
       status: jsonData['status'] ?? '',
-      connectorTypes: List<String>.from(jsonDecode(jsonData['connectorTypes'])) ?? [],
+      connectorTypes: connectorTypesStr,
     );
 
     return connector;
