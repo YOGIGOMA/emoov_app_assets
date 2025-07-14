@@ -9,6 +9,7 @@ class EmoovCharger
   String displaySerialNumber;
   String chargePointSerialNumber;
   String lastModifiedDate;
+  bool connected;
 
   List<EmoovConnector> connectors = [];
 
@@ -17,6 +18,7 @@ class EmoovCharger
     required this.displaySerialNumber,
     required this.chargePointSerialNumber,
     required this.lastModifiedDate,
+    required this.connected,
   });
 
   factory EmoovCharger.fromJson(Map<String, dynamic> jsonData)
@@ -26,6 +28,7 @@ class EmoovCharger
       displaySerialNumber: jsonData['displaySerialNumber'] ?? '',
       chargePointSerialNumber: jsonData['chargePointSerialNumber'] ?? '',
       lastModifiedDate: jsonData['lastModifiedDate'] ?? '',
+      connected: jsonData['connected'] ?? false,
     );
 
     if(jsonData['connectors'] != null) {
