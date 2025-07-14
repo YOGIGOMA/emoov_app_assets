@@ -20,10 +20,10 @@ class EmoovCharger
   factory EmoovCharger.fromJson(Map<String, dynamic> jsonData)
   {
     var charger = EmoovCharger(
-      chargerSysId: jsonData['ChargerSysId'],
-      displaySerialNumber: jsonData['DisplaySerialNumber'],
-      chargePointSerialNumber: jsonData['ChargePointSerialNumber'],
-      lastModifiedDate: jsonData['LastModifiedDate'],
+      chargerSysId: jsonData['chargerId'] ?? '',
+      displaySerialNumber: jsonData['displaySerialNumber'] ?? '',
+      chargePointSerialNumber: jsonData['chargePointSerialNumber'] ?? '',
+      lastModifiedDate: jsonData['lastModifiedDate'] ?? '',
     );
 
     if(jsonData['connectors'] != null) {
@@ -53,9 +53,9 @@ class EmoovConnector
   factory EmoovConnector.fromJson(Map<String, dynamic> jsonData)
   {
     var connector = EmoovConnector(
-      connectorId: jsonData['ConnectorId'],
-      status: jsonData['Status'],
-      connectorTypes: jsonData['ConnectorTypes'],
+      connectorId: jsonData['connectorId'] ?? '',
+      status: jsonData['status'] ?? '',
+      connectorTypes: jsonData['connectorTypes'],
     );
 
     return connector;
