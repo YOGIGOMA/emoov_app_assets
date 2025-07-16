@@ -13,7 +13,10 @@ class PreferenceKeys
   static const String prefKeyFilterFacilityType = 'filter.facilityType';
   static const String prefKeySetupUseBiometrics = 'setup.useBiometrics';
   static const String prefKeyStateIsFirstRun = 'state.isFirstRun';
+
   static const String prefKeyStateCanUseBiometrics = 'state.canUseBiometrics';
   static const String prefKeyStateRememberLoginInfo = 'state.rememberLoginInfo';
   static const String prefKeyStateNeverShowNfcHelp = 'state.neverShowNfcHelp';
+  // 최초 로그인시 안내 대화상자 전시 여부
+  static const String prefKeyStateNeverShowFirstLoginHelp = 'state.neverShowFirstLoginHelp';
 }
