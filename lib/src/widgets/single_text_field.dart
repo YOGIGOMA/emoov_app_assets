@@ -36,11 +36,12 @@ class _SingleTextFieldState extends ConsumerState<SingleTextField>
 {
   //final TextEditingController _controller = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-
+  late bool _visible;
 
   @override
   void initState() {
     super.initState();
+    _visible = widget.isObscureText;
   }
 
   @override
@@ -53,14 +54,14 @@ class _SingleTextFieldState extends ConsumerState<SingleTextField>
   @override
   Widget build(BuildContext context)
   {
-    bool visible = widget.isObscureText;
+    //_visible = widget.isObscureText;
 
     return SizedBox(
       width: double.infinity,
       height: widget.height,
       child: TextField(
         controller: widget.controller,
-        obscureText: visible,
+        obscureText: _visible,
         decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(4.r),
@@ -86,11 +87,11 @@ class _SingleTextFieldState extends ConsumerState<SingleTextField>
             hintText: widget.hintText,
             suffixIcon: IconButton(
               icon: Icon(
-                widget.isObscureText ? Icons.visibility : null,
+                _visible ? Icons.visibility : Icons.visibility,
               ),
               onPressed: () {
                 setState(() {
-                  visible = !visible;
+                  _visible = !_visible;
                 });
               },
             )
