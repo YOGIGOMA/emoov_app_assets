@@ -44,6 +44,8 @@ export 'src/data_models/identity_verification_info.dart';
 export 'src/data_models/emoov_charging_station.dart';
 export 'src/data_models/emoov_charger.dart';
 
+export 'src/view_models/charging_status_viewmodel.dart';
+
 export 'src/widgets/connection_error.dart';
 export 'src/widgets/emoov_badge2.dart';
 export 'src/widgets/filled_text_button.dart';
