@@ -49,6 +49,20 @@ class PreferenceService
     if(prefs.getBool(PreferenceKeys.prefKeyStateNeverShowFirstLoginHelp) == null) {
       prefs.setBool(PreferenceKeys.prefKeyStateNeverShowFirstLoginHelp, false);
     }
+
+    /// Set Default charging status
+    if(prefs.getString(PreferenceKeys.prefKeyChargingStatusStartTime) == null) {
+      prefs.setString(PreferenceKeys.prefKeyChargingStatusStartTime, '');
+    }
+    if(prefs.getString(PreferenceKeys.prefKeyChargingStatusStage) == null) {
+      prefs.setString(PreferenceKeys.prefKeyChargingStatusStage, '');
+    }
+    if(prefs.getInt(PreferenceKeys.prefKeyChargingStatusAoC) == null) {
+      prefs.setInt(PreferenceKeys.prefKeyChargingStatusAoC, 0);
+    }
+    if(prefs.getDouble(PreferenceKeys.prefkeyChargingStatusSoC) == null) {
+      prefs.setDouble(PreferenceKeys.prefkeyChargingStatusSoC, 0.0);
+    }
   }
 
   static Future<dynamic> hasChargingProcess() async
@@ -175,6 +189,54 @@ class PreferenceService
   {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(PreferenceKeys.prefKeyStateNeverShowFirstLoginHelp);
+  }
+
+  static void saveChargingStatusAoC(int value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt(PreferenceKeys.prefKeyChargingStatusAoC, value);
+  }
+
+  static Future<int> getChargingStatusAoC() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getInt(PreferenceKeys.prefKeyChargingStatusAoC)!;
+  }
+
+  static void saveChargingStatusSoC(double value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setDouble(PreferenceKeys.prefkeyChargingStatusSoC, value);
+  }
+
+  static Future<double> getChargingStatusSoC() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getDouble(PreferenceKeys.prefkeyChargingStatusSoC)!;
+  }
+
+  static void saveChargingStatusStage(String value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString(PreferenceKeys.prefKeyChargingStatusStage, value);
+  }
+
+  static Future<String> getChargingStatusStage() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(PreferenceKeys.prefKeyChargingStatusStage)!;
+  }
+
+  static void saveChargingStatusStartTime(String value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString(PreferenceKeys.prefKeyChargingStatusStartTime, value);
+  }
+
+  static Future<String> getChargingStatusStartTime() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(PreferenceKeys.prefKeyChargingStatusStartTime)!;
   }
 
   static Future<String> printBiometricsStatus() async

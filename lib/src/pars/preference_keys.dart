@@ -19,4 +19,10 @@ class PreferenceKeys
   static const String prefKeyStateNeverShowNfcHelp = 'state.neverShowNfcHelp';
   // 최초 로그인시 안내 대화상자 전시 여부
   static const String prefKeyStateNeverShowFirstLoginHelp = 'state.neverShowFirstLoginHelp';
+
+  // 충전상태 정보
+  static const String prefKeyChargingStatusStartTime = 'chargingStatus.startTime';
+  static const String prefKeyChargingStatusStage = 'chargingStatus.stage';
+  static const String prefKeyChargingStatusAoC = 'chargingStatus.aoc';
+  static const String prefkeyChargingStatusSoC = 'chargingStatus.soc';
 }
