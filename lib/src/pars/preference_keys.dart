@@ -24,5 +24,6 @@ class PreferenceKeys
   static const String prefKeyChargingStatusStartTime = 'chargingStatus.startTime';
   static const String prefKeyChargingStatusStage = 'chargingStatus.stage';
   static const String prefKeyChargingStatusAoC = 'chargingStatus.aoc';
-  static const String prefkeyChargingStatusSoC = 'chargingStatus.soc';
+  static const String prefKeyChargingStatusSoC = 'chargingStatus.soc';
+  static const String prefKeyChargingStatusChargerId = 'chargingStatus.chargerId';
 }

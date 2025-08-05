@@ -57,11 +57,14 @@ class PreferenceService
     if(prefs.getString(PreferenceKeys.prefKeyChargingStatusStage) == null) {
       prefs.setString(PreferenceKeys.prefKeyChargingStatusStage, '');
     }
+    if(prefs.getString(PreferenceKeys.prefKeyChargingStatusChargerId) == null) {
+      prefs.setString(PreferenceKeys.prefKeyChargingStatusChargerId, '');
+    }
     if(prefs.getInt(PreferenceKeys.prefKeyChargingStatusAoC) == null) {
       prefs.setInt(PreferenceKeys.prefKeyChargingStatusAoC, 0);
     }
-    if(prefs.getDouble(PreferenceKeys.prefkeyChargingStatusSoC) == null) {
-      prefs.setDouble(PreferenceKeys.prefkeyChargingStatusSoC, 0.0);
+    if(prefs.getDouble(PreferenceKeys.prefKeyChargingStatusSoC) == null) {
+      prefs.setDouble(PreferenceKeys.prefKeyChargingStatusSoC, 0.0);
     }
   }
 
@@ -206,13 +209,13 @@ class PreferenceService
   static void saveChargingStatusSoC(double value) async
   {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setDouble(PreferenceKeys.prefkeyChargingStatusSoC, value);
+    prefs.setDouble(PreferenceKeys.prefKeyChargingStatusSoC, value);
   }
 
   static Future<double> getChargingStatusSoC() async
   {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getDouble(PreferenceKeys.prefkeyChargingStatusSoC)!;
+    return prefs.getDouble(PreferenceKeys.prefKeyChargingStatusSoC)!;
   }
 
   static void saveChargingStatusStage(String value) async
