@@ -48,6 +48,7 @@ class EmoovConnector
   int connectorId;
   String status;
   List<String> connectorTypes = [];
+  String? connectorMoeId;  // 환경부 커넥터 식별자 (optional)
 
   EmoovConnector({
     required this.connectorId,
