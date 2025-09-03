@@ -17,6 +17,7 @@ class BigTitleBasePage extends ConsumerWidget
   final String? subTitle;
   final Widget body;
   final VoidCallback onGestureTap;
+  final Color title2Color;
 
   const BigTitleBasePage({
     required this.scrollController,
@@ -25,6 +26,7 @@ class BigTitleBasePage extends ConsumerWidget
     required this.titleLine2,
     required this.body,
     required this.onGestureTap,
+    required this.title2Color,
     this.titleLine3,
     this.subTitle,
     super.key
@@ -116,10 +118,10 @@ class BigTitleBasePage extends ConsumerWidget
                               Row(
                                 children: [
                                   Text(titleLine2,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       fontSize: 23,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xff21ABD2),
+                                      color: title2Color,//Color(0xff21ABD2),
                                     ),
                                   ),
                                 ],
