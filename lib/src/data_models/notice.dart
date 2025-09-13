@@ -16,6 +16,7 @@ class Notice
   String popupEndDate = '';
   String postType = '';
   String createdDate = '';
+  Map<String, String>? imageInfos;
 
   Notice({
     required this.postId,
@@ -28,7 +29,8 @@ class Notice
     required this.popupStartDate,
     required this.popupEndDate,
     required this.postType,
-    required this.createdDate
+    required this.createdDate,
+    required this.imageInfos
   });
 
   factory Notice.fromJson(Map<String, dynamic> jsonData)
@@ -44,7 +46,8 @@ class Notice
         popupStartDate: jsonData['PopupStartDate'],
         popupEndDate: jsonData['PopupEndDate'],
         postType: jsonData['PostType'],
-        createdDate: jsonData['CreatedDate']
+        createdDate: jsonData['CreatedDate'],
+        imageInfos: jsonData['ImageInfos'] != null ? Map<String, String>.from(jsonData['ImageInfos']) : {}
     );
   }
 
