@@ -87,7 +87,7 @@ class _SingleTextFieldState extends ConsumerState<SingleTextField>
             hintText: widget.hintText,
             suffixIcon: IconButton(
               icon: Icon(
-                _visible ? Icons.visibility : null,
+                _visible ? Icons.visibility : Icons.visibility_off,
               ),
               onPressed: () {
                 setState(() {
