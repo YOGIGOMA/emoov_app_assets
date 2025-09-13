@@ -49,6 +49,9 @@ class PreferenceService
     if(prefs.getBool(PreferenceKeys.prefKeyStateNeverShowFirstLoginHelp) == null) {
       prefs.setBool(PreferenceKeys.prefKeyStateNeverShowFirstLoginHelp, false);
     }
+    if(prefs.getString(PreferenceKeys.prefKeyStateShowNoticeDialog) == null) {
+      prefs.setString(PreferenceKeys.prefKeyStateShowNoticeDialog, '');
+    }
 
     /// Set Default charging status
     if(prefs.getString(PreferenceKeys.prefKeyChargingStatusStartTime) == null) {
@@ -192,6 +195,18 @@ class PreferenceService
   {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getBool(PreferenceKeys.prefKeyStateNeverShowFirstLoginHelp);
+  }
+
+  static void saveShowNoticeDialogState(String value) async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString(PreferenceKeys.prefKeyStateShowNoticeDialog, value);
+  }
+
+  static Future<String> getShowNoticeDialogState() async
+  {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(PreferenceKeys.prefKeyStateShowNoticeDialog)!;
   }
 
   static void saveChargingStatusAoC(int value) async
