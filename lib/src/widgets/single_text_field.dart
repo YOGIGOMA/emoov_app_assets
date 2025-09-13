@@ -85,7 +85,7 @@ class _SingleTextFieldState extends ConsumerState<SingleTextField>
                 )
             ),
             hintText: widget.hintText,
-            suffixIcon: IconButton(
+            suffixIcon: widget.isObscureText ? IconButton(
               icon: Icon(
                 _visible ? Icons.visibility : Icons.visibility_off,
               ),
@@ -94,7 +94,7 @@ class _SingleTextFieldState extends ConsumerState<SingleTextField>
                   _visible = !_visible;
                 });
               },
-            )
+            ) : null
         ),
         textAlignVertical: TextAlignVertical.bottom,
         keyboardType: widget.inputType,
