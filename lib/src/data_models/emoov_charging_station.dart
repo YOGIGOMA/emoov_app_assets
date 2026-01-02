@@ -12,6 +12,7 @@ class EmoovChargingStation
   String detailAddress;
   double? lat;
   double? lng;
+  double? distanceValue;
   String? distance;
 
   EmoovChargingStation({
@@ -40,6 +41,7 @@ class EmoovChargingStation
           myLat, myLng,
           jsonData['Latitude'], jsonData['Longitude']
       );
+      station.distanceValue = distance;
 
       String? distanceStr;
       distanceStr = (distance / 1000).toStringAsFixed(1); // 미터를 킬로미터로 변환
