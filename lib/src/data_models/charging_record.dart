@@ -9,6 +9,7 @@ class ChargingRecord
   double unitPrice = 0.0;
   bool isChargingCompleted;
   bool isPaymentCompleted;
+  String orderId = '';
 
   ChargingRecord({
     required this.startDate,
@@ -18,6 +19,7 @@ class ChargingRecord
     required this.unitPrice,
     required this.isChargingCompleted,
     required this.isPaymentCompleted,
+    required this.orderId,
   });
 
   factory ChargingRecord.fromJson(Map<String, dynamic> jsonData)
@@ -43,6 +45,7 @@ class ChargingRecord
       unitPrice: jsonData['unitPrice'],
       isChargingCompleted: jsonData['chargingCompleted'],
       isPaymentCompleted: jsonData['paymentCompleted'],
+      orderId: jsonData['orderId'] as String? ?? '',
     );
   }
 }
