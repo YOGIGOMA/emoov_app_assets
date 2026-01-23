@@ -90,6 +90,7 @@ class AuthRequestInterceptor extends Interceptor
               token: newToken,
               signInId: (await secureStorageService.getSignInId())!,
               sysId: (await secureStorageService.getUserId())!,
+              phoneNumber: (await secureStorageService.getPhoneNumber())!,
               refreshToken: newRefreshToken,
               nickName: '',
               expiredDate: newExpiredDate,
