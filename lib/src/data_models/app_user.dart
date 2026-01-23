@@ -10,12 +10,14 @@ class AppUser
   String refreshToken = '';
   String nickName = '';
   String expiredDate = '';
+  String phoneNumber = '';
 
   AppUser({
     required this.username,
     required this.token,
     required this.signInId,
     required this.sysId,
+    required this.phoneNumber,
     required this.refreshToken,
     required this.nickName,
     required this.expiredDate
@@ -28,6 +30,7 @@ class AppUser
         signInId: jsonData['SignInId'],
         username: jsonData['UserName'],
         nickName: jsonData['NickName'],
+        phoneNumber: jsonData['PhoneNumber'],
         token: jsonData['AccessToken'],
         refreshToken: jsonData['RefreshToken'],
         expiredDate: jsonData['ExpiredDate']
