@@ -6,6 +6,16 @@ class SecureStorageService
 {
   final storage = const FlutterSecureStorage();
 
+  Future<void> setPhoneNumber(String value) async
+  {
+    await storage.write(key: 'user-phone', value: value);
+  }
+
+  Future<String?> getPhoneNumber() async
+  {
+    return await storage.read(key: 'user-phone');
+  }
+
   Future<void> setAccessToken(String value) async
   {
     await storage.write(key: 'access-token', value: value);
@@ -90,6 +100,7 @@ class SecureStorageService
     await storage.delete(key: 'user-id');
     await storage.delete(key: 'user-role');
     await storage.delete(key: 'user-password');
+    await storage.delete(key: 'user-phone');
   }
 
   Future<void> clearToken() async
@@ -103,7 +114,7 @@ class SecureStorageService
   {
     final userSysId = await storage.read(key: 'user-id');
     final userName = await storage.read(key: 'user-name');
-    final userPassword = await storage.read(key: 'user-password');
+    //final userPassword = await storage.read(key: 'user-password');
     final userRole = await storage.read(key: 'user-role');
     final accessToken = await storage.read(key: 'access-token');
     final refreshToken = await storage.read(key: 'refresh-token');
