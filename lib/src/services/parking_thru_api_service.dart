@@ -71,17 +71,26 @@ class ParkingThruApiService
   Future<Map<String, dynamic>> getTokenAsync(
       String parkingThruDomainName,
       String parkingThruServiceId,
-      String idNumber) async
+      String idNumber,
+      String? phoneNumber) async
   {
     idNumber = idNumber.replaceAll('-', '');
     if(idNumber.length > 40) {
       idNumber = idNumber.substring(0, 40);
     }
 
+    var phoneNo = '';
+    if(phoneNumber == null) {
+      phoneNo = idNumber;
+    }
+    else{
+      phoneNo = phoneNumber;
+    }
+
     String para = "{"
           "\"apiToken\":\"MemberShipAuthTokenRequest\","
           "\"idCenter\":\"$parkingThruServiceId\","
-          "\"phoneNo\":\"$idNumber\","
+          "\"phoneNo\":\"$phoneNo\","
           "\"device\":\" \","
           "\"model\":\" \","
           "\"osType\":\"2\","
