@@ -30,7 +30,7 @@ class AppUser
         signInId: jsonData['SignInId'],
         username: jsonData['UserName'],
         nickName: jsonData['NickName'],
-        phoneNumber: jsonData['PhoneNumber'],
+        phoneNumber: jsonData['PhoneNumber'] ?? '',
         token: jsonData['AccessToken'],
         refreshToken: jsonData['RefreshToken'],
         expiredDate: jsonData['ExpiredDate']

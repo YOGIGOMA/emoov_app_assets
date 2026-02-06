@@ -1,6 +1,7 @@
 
 /// @{category DataModel}
 /// 포인트 사용기록 데이터모델
+/// @deprecated 포인트 백엔드의 변경으로 사용하지 않을 예정. 앱에서 오류를 막기 위해서 일단 삭제하지 않고 유지 중
 class PointRecord
 {
   String requestId = '';
