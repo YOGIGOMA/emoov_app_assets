@@ -152,7 +152,7 @@ class PreferenceService
   static void saveUseBiometric(bool value) async
   {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setBool(PreferenceKeys.prefKeySetupUseBiometrics, value);
+    await prefs.setBool(PreferenceKeys.prefKeySetupUseBiometrics, value);
   }
 
   static Future<bool?> getUseBiometricState() async
@@ -164,7 +164,7 @@ class PreferenceService
   static void saveRememberLoginInfoState(bool value) async
   {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setBool(PreferenceKeys.prefKeyStateRememberLoginInfo, value);
+    await prefs.setBool(PreferenceKeys.prefKeyStateRememberLoginInfo, value);
   }
 
   static Future<bool?> getRememberLoginInfoState() async
